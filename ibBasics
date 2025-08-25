@@ -1,0 +1,22 @@
+//Go to XCode->MainScreen->(On the top left see assistant option)->Make the required connections and below the basic code 
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var courseTextField: UITextField!
+    @IBOutlet weak var semTextField: UITextField!
+    @IBOutlet weak var univTextField: UITextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+    @IBAction func buttonTagged(_ sender: Any) {
+        nameTextField.text = "Name"
+        courseTextField.text = "Course"
+        semTextField.text = "Semester"
+        univTextField.text = "University Name"
+    }
+    
+}
