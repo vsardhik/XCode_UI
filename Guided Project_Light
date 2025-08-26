@@ -1,0 +1,29 @@
+
+
+Open Xcode and create a new iOS project, choose App, set the name as Light, choose Interface as Storyboard and Language as Swift, then create the project.
+
+In the project navigator select Main.storyboard and open the View Controller screen.
+
+Open the Object Library from the top-right plus icon or by pressing Shift+Command+L, search for Button, then drag it onto the View Controller.
+
+Select the button, go to the Attributes Inspector, change the Title to “+” and adjust the font size if needed.
+
+Drag the button to the upper-left corner of the view inside the safe area.
+
+With the button selected click the Add New Constraints tool at the bottom, check Top and Leading, set both to 16, and add the constraints so the button stays at the top-left.
+
+Open Main.storyboard and select the View Controller screen.
+
+At the top right of Xcode click the two interlocking circles icon to open the Assistant editor.
+
+Make sure it shows ViewController.swift side by side with the storyboard.
+
+Hold Control and drag from the “+” button into the ViewController.swift file, just below the class definition.
+
+In the popup choose Action, give it a name like plusTapped, then click Connect.
+
+Now an @IBAction func plusTapped(_ sender: UIButton) method will appear where you can write code for the button click.
+
+Build and run the app. When you press the buuton,nothing happens,because ther's no code within buttonPressed(_:) method to execute.To verify that the method is being called,you can place the breakpoint within the method defination.
+
+
