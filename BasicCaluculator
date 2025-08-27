@@ -1,0 +1,46 @@
+//Connect the required textFields and Buttons properly 
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var num1Field: UITextField!
+    @IBOutlet weak var num2Field: UITextField!
+    @IBOutlet weak var resultField: UITextField!
+
+    var currentOperation: String?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    @IBAction func addPressed(_ sender: UIButton) {
+        currentOperation = "+"
+    }
+
+    @IBAction func subPressed(_ sender: UIButton) {
+        currentOperation = "-"
+    }
+
+    @IBAction func mulPressed(_ sender: UIButton) {
+        currentOperation = "*"
+    }
+
+    @IBAction func divPressed(_ sender: UIButton) {
+        currentOperation = "/"
+    }
+
+    @IBAction func resultPressed(_ sender: UIButton) {
+        if let a = Double(num1Field.text!), let b = Double(num2Field.text!), let op = currentOperation {
+            switch op {
+            case "+": resultField.text = "\(a + b)"
+            case "-": resultField.text = "\(a - b)"
+            case "*": resultField.text = "\(a * b)"
+            case "/": resultField.text = b != 0 ? "\(a / b)" : "Error"
+            default: break
+            }
+        } else {
+            resultField.text = "Invalid Input"
+        }
+    }
+}
