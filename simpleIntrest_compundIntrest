@@ -1,0 +1,48 @@
+/*
+Make Connections in Storyboard
+
+Principal, Time, Rate → connect each UITextField as @IBOutlet.
+
+Result Labels → connect each UILabel as @IBOutlet.
+
+Simple Interest Button → connect as @IBAction.
+
+Compound Interest Button → connect as @IBAction.
+*/
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var principalText: UITextField!
+    @IBOutlet weak var timeText: UITextField!
+    @IBOutlet weak var rateText: UITextField!
+    @IBOutlet weak var simpleResult: UILabel!
+    @IBOutlet weak var compundResult: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func calculateSimpleIntrest(_ sender: UIButton) {
+        let p = Double(principalText.text ?? "0") ?? 0
+        let t = Double(timeText.text ?? "0") ?? 0
+        let r = Double(rateText.text ?? "0") ?? 0
+        
+        let si = p * r * t / 100
+        simpleResult.text = "\(si)"
+        
+    }
+    
+    @IBAction func calculateCompundIntrest(_ sender: UIButton) {
+        let p = Double(principalText.text ?? "0") ?? 0
+        let t = Double(timeText.text ?? "0") ?? 0
+        let r = Double(rateText.text ?? "0") ?? 0
+        
+        let amount = p * pow((1 + r/100), t)
+        let ci = amount - p
+        compundResult.text = "\(ci)"
+    }
+    
+}
